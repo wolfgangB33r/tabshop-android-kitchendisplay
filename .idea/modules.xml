@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KitchenDisplay.iml" filepath="$PROJECT_DIR$/KitchenDisplay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TabShop-KitchenDisplay.iml" filepath="$PROJECT_DIR$/TabShop-KitchenDisplay.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
-
