@@ -15,7 +15,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
+        <activity android:exported="true"
             android:name="at.smartlab.tshop.kdisplay.DisplayActivity"
             android:label="@string/app_name" >
             <intent-filter>
