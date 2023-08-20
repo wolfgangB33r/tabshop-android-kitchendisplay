@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tabshop-android-kitchendisplay.iml" filepath="$PROJECT_DIR$/.idea/modules/tabshop-android-kitchendisplay.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tabshop-android-kitchendisplay.app.unitTest.iml" />
     </modules>
   </component>
 </project>
