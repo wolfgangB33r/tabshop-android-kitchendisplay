@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace "at.smartlab.tshop.kdisplay"
     compileSdkVersion 33
-    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "at.smartlab.tshop.kdisplay"
