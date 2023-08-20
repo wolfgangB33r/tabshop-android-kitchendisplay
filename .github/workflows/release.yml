@@ -1,0 +1,48 @@
+name: Build and release a new app version to Google Play Store
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'oracle'
+        java-version: '20'
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build TabShop with Gradle
+      run: ./gradlew build
+    - name: Build app release bundle (AAB) 
+      id: buildRelease
+      run: ./gradlew bundleRelease
+    - name: Sign application bundle
+      id: sign
+      uses: r0adkll/sign-android-release@v1
+      with:
+        releaseDirectory: app/build/outputs/bundle/release
+        signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+        alias: ${{ secrets.ALIAS }}
+        keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+        keyPassword: ${{ secrets.KEY_PASSWORD }}    
+    - name: Dump GitHub context
+      run: echo ${{ github.ref }}
+    - name: Write service_account.json (needed for Google Play Publishing) from secret to a local file
+      id: createServiceAccount
+      run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
+    - name: Deploy app release to Play Store (BETA)
+      id: deploy
+      uses: r0adkll/upload-google-play@v1.0.19
+      with:
+        serviceAccountJson: service_account.json
+        packageName: at.smartlab.tshop.kdisplay
+        releaseFiles: app/build/outputs/bundle/release/app-release.aab
+        track: beta
+        status: draft
+        whatsNewDirectory: whatsnew/
+    
