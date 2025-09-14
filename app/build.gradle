@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "at.smartlab.tshop.kdisplay"
-    compileSdkVersion 33
+    compileSdkVersion 35
 
     defaultConfig {
         applicationId "at.smartlab.tshop.kdisplay"
-        minSdkVersion 16
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 35
         versionCode 6
         versionName "6.0"
     }
